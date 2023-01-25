@@ -11,6 +11,7 @@ public class Vida_Nave : MonoBehaviour
     public TMP_Text Texto_nave;
     public GameObject sonido_muerte;
     public GameObject sonido_golpe;
+    public GameObject GameOver;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +34,7 @@ public class Vida_Nave : MonoBehaviour
             Texto_nave.text = "Nave: " + vida;
             if (vida <= 0) {
                 Instantiate(sonido_muerte, transform.position,Quaternion.identity);
+                GameOver.SetActive(true);
                 Destroy (gameObject);
             }
         }
@@ -42,6 +44,8 @@ public class Vida_Nave : MonoBehaviour
             Instantiate(sonido_muerte, transform.position,Quaternion.identity);
             Texto_nave.text = "Nave: " + vida;
             if (vida <= 0) {
+                Instantiate(sonido_muerte, transform.position,Quaternion.identity);
+                GameOver.SetActive(true);
                 Destroy (gameObject);
             }
         }

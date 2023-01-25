@@ -9,6 +9,7 @@ public class Vidas : MonoBehaviour
     public Image[] vidasUI;
     public GameObject sonido_muerte;
     public GameObject sonido_golpe;
+    public GameObject GameOver;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +38,7 @@ public class Vidas : MonoBehaviour
             }
             if (vidas <= 0) {
                 Instantiate(sonido_muerte, transform.position,Quaternion.identity);
+                GameOver.SetActive(true);
                 Destroy (gameObject);
             }
         }
@@ -55,6 +57,7 @@ public class Vidas : MonoBehaviour
             }
             if (vidas <= 0) {
                 Instantiate(sonido_muerte, transform.position,Quaternion.identity);
+                GameOver.SetActive(true);
                 Destroy (gameObject);
                 
             }

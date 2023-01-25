@@ -16,6 +16,6 @@ public class Cronometro : MonoBehaviour
     void Update()
     {
         tiempo += Time.deltaTime;
-        Texto_tiempo.text = "Tiempo:" + tiempo;
+        Texto_tiempo.text = "Tiempo:" + string.Format("{0:0.00}",tiempo);
     }
 }
